@@ -1,0 +1,1599 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVORL | Executive Mineral Water Delivery in Johar Town &amp; Lahore</title>
+    <meta
+      name="description"
+      content="EVORL delivers 7-stage purified, mineral-balanced alkaline water (pH 7.4) to homes and executive offices across Johar Town and Lahore. Daily delivery 8:00 AM – 11:00 PM."
+    />
+    <meta
+      name="keywords"
+      content="mineral water delivery Lahore, Johar Town mineral water, 19 liter water bottle Lahore, alkaline water delivery Lahore, commercial water supply Lahore, EVORL water"
+    />
+    <meta name="author" content="Muhammad Umar Nazir — EVORL" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#F8FAFC" />
+
+    <!-- Browser Favicon & Apple Touch Icon -->
+    <link rel="icon" type="image/png" href="evorl-logo.png" />
+    <link rel="apple-touch-icon" href="evorl-logo.png" />
+
+    <!-- OpenGraph / Social Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="EVORL Mineral Water" />
+    <meta property="og:title" content="EVORL | Executive Mineral Water Delivery in Lahore" />
+    <meta
+      property="og:description"
+      content="7-stage engineered mineral water with balanced pH 7.4 and optimal TDS. Delivered daily from 8:00 AM to 11:00 PM across Johar Town &amp; Lahore."
+    />
+    <meta property="og:image" content="images/product-19l.jpg" />
+    <meta property="og:locale" content="en_PK" />
+
+    <!-- LocalBusiness JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "EVORL",
+        "logo": "evorl-logo.png",
+        "image": "evorl-logo.png",
+        "description": "Residential and commercial 7-stage purified mineral water supplier in Johar Town and Lahore, Pakistan.",
+        "founder": {
+          "@type": "Person",
+          "name": "Muhammad Umar Nazir"
+        },
+        "telephone": "+923204341157",
+        "email": "umarnazir859@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "301A Revenue Housing Society, Johar Town, Near Masjid Ayesha",
+          "addressLocality": "Lahore",
+          "addressRegion": "Punjab",
+          "addressCountry": "PK"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Lahore"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "08:00",
+            "closes": "23:00"
+          }
+        ],
+        "sameAs": [
+          "https://instagram.com"
+        ],
+        "priceRange": "$$"
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              alabaster: '#F8FAFC',
+              mist: '#F1F5F9',
+              pure: '#FFFFFF',
+              ink: '#0F172A',
+              slate: '#475569',
+              glacial: '#0284C7',
+              ocean: '#0369A1',
+              abyss: '#0C4A6E',
+              aqua: '#38BDF8',
+            },
+            fontFamily: {
+              display: ['Syne', 'sans-serif'],
+              serif: ['Cinzel', 'serif'],
+              editorial: ['Cormorant Garamond', 'serif'],
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            boxShadow: {
+              glacial: '0 20px 50px -12px rgba(2, 132, 199, 0.14)',
+              card: '0 12px 36px -8px rgba(15, 23, 42, 0.06)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Alpine.js v3 -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP v3 + ScrollTrigger & Vanilla-Tilt.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body
+    x-data="evorlApp()"
+    x-init="initApp()"
+    class="bg-alabaster text-slate font-sans antialiased selection:bg-glacial selection:text-pure overflow-x-hidden relative"
+  >
+    <!-- Glacial Scroll Progress Bar -->
+    <div
+      id="scroll-tracker"
+      class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-glacial via-aqua to-glacial z-[100] w-0 shadow-[0_0_12px_rgba(2,132,199,0.45)] transition-all duration-75"
+    ></div>
+
+    <!-- Subtle Mineral Micro-Texture Overlay -->
+    <div
+      class="fixed inset-0 pointer-events-none z-50 opacity-[0.025] bg-[radial-gradient(#0284C7_1px,transparent_1px)] [background-size:20px_20px]"
+    ></div>
+
+    <!-- ============ SECTION 1: STICKY FROSTED-WHITE HEADER ============ -->
+    <header
+      id="site-header"
+      :class="{
+        'bg-pure/85 backdrop-blur-xl border-b border-ink/[0.06] py-3.5 shadow-[0_10px_30px_-10px_rgba(15,23,42,0.06)]': scrolled,
+        'bg-pure/50 backdrop-blur-md border-b border-transparent py-5': !scrolled
+      }"
+      class="fixed top-0 left-0 w-full z-40 transition-all duration-500"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <!-- Official EVORL Brand Logo -->
+        <a
+          href="#home"
+          aria-label="EVORL Pure Mineral Water Home"
+          class="inline-flex items-center shrink-0 min-h-[44px] bg-transparent"
+        >
+          <img
+            src="evorl-logo.png"
+            alt="EVORL Pure Mineral Water Lahore"
+            class="h-10 sm:h-12 w-auto object-contain bg-transparent transition-transform duration-300 hover:scale-105"
+          />
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-8" aria-label="Primary Navigation">
+          <a
+            href="#standards"
+            class="text-xs uppercase tracking-[0.2em] font-semibold text-ink/80 hover:text-glacial transition-colors duration-300"
+          >
+            Standards
+          </a>
+          <a
+            href="#packages"
+            class="text-xs uppercase tracking-[0.2em] font-semibold text-ink/80 hover:text-glacial transition-colors duration-300"
+          >
+            Packages
+          </a>
+          <a
+            href="#catalogue"
+            class="text-xs uppercase tracking-[0.2em] font-semibold text-ink/80 hover:text-glacial transition-colors duration-300"
+          >
+            Catalogue
+          </a>
+          <a
+            href="#commercial"
+            class="text-xs uppercase tracking-[0.2em] font-semibold text-ink/80 hover:text-glacial transition-colors duration-300"
+          >
+            Corporate
+          </a>
+          <a
+            href="#coverage"
+            class="text-xs uppercase tracking-[0.2em] font-semibold text-ink/80 hover:text-glacial transition-colors duration-300"
+          >
+            Lahore Delivery
+          </a>
+        </nav>
+
+        <!-- Desktop Magnetic CTA Button (Opens Alpine Order Modal) -->
+        <div class="hidden lg:flex items-center gap-4">
+          <button
+            type="button"
+            @click="openOrderModal()"
+            class="magnetic-btn relative inline-flex items-center justify-center px-6 py-3 min-h-[44px] text-xs font-bold uppercase tracking-[0.2em] text-pure bg-ink hover:bg-glacial rounded-full overflow-hidden shadow-[0_10px_25px_-5px_rgba(2,132,199,0.32)] transition-colors duration-300 will-change-transform"
+          >
+            <span class="relative flex items-center gap-2">
+              <i data-lucide="droplets" class="w-3.5 h-3.5 text-aqua"></i>
+              <span>Order Water</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </button>
+        </div>
+
+        <!-- Mobile Hamburger Trigger (44px+ touch target) -->
+        <button
+          type="button"
+          @click="mobileMenuOpen = !mobileMenuOpen"
+          :aria-expanded="mobileMenuOpen"
+          aria-label="Toggle Menu"
+          class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full bg-pure border border-ink/10 text-ink hover:border-glacial hover:text-glacial shadow-sm transition-colors"
+        >
+          <i x-show="!mobileMenuOpen" data-lucide="menu" class="w-5 h-5"></i>
+          <i x-show="mobileMenuOpen" data-lucide="x" class="w-5 h-5" style="display: none;"></i>
+        </button>
+      </div>
+
+      <!-- Full-Screen Frosted-White Mobile Drawer -->
+      <div
+        x-show="mobileMenuOpen"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 -translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-4"
+        class="lg:hidden fixed inset-0 top-0 left-0 w-full h-screen bg-pure/95 backdrop-blur-2xl z-50 flex flex-col justify-between px-6 pt-6 pb-10 overflow-y-auto"
+        style="display: none;"
+      >
+        <!-- Drawer Top Bar with Official EVORL Logo -->
+        <div class="flex items-center justify-between border-b border-ink/[0.06] pb-4">
+          <a
+            @click="mobileMenuOpen = false"
+            href="#home"
+            aria-label="EVORL Pure Mineral Water Home"
+            class="inline-flex items-center shrink-0 min-h-[44px] bg-transparent"
+          >
+            <img
+              src="evorl-logo.png"
+              alt="EVORL Pure Mineral Water Lahore"
+              class="h-12 w-auto object-contain bg-transparent"
+            />
+          </a>
+          <button
+            type="button"
+            @click="mobileMenuOpen = false"
+            aria-label="Close Menu"
+            class="inline-flex items-center justify-center w-11 h-11 rounded-full bg-alabaster border border-ink/10 text-ink hover:text-glacial"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Drawer Navigation Links (44px+ Touch Targets) -->
+        <nav class="flex flex-col gap-2 my-auto py-8" aria-label="Mobile Navigation">
+          <a
+            @click="mobileMenuOpen = false"
+            href="#standards"
+            class="min-h-[48px] flex items-center justify-between px-4 rounded-xl text-base font-display font-bold uppercase tracking-[0.14em] text-ink hover:bg-mist hover:text-glacial transition-colors"
+          >
+            <span>Brand Standards</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-glacial"></i>
+          </a>
+          <a
+            @click="mobileMenuOpen = false"
+            href="#packages"
+            class="min-h-[48px] flex items-center justify-between px-4 rounded-xl text-base font-display font-bold uppercase tracking-[0.14em] text-ink hover:bg-mist hover:text-glacial transition-colors"
+          >
+            <span>Executive Packages</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-glacial"></i>
+          </a>
+          <a
+            @click="mobileMenuOpen = false"
+            href="#catalogue"
+            class="min-h-[48px] flex items-center justify-between px-4 rounded-xl text-base font-display font-bold uppercase tracking-[0.14em] text-ink hover:bg-mist hover:text-glacial transition-colors"
+          >
+            <span>Product Catalogue</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-glacial"></i>
+          </a>
+          <a
+            @click="mobileMenuOpen = false"
+            href="#commercial"
+            class="min-h-[48px] flex items-center justify-between px-4 rounded-xl text-base font-display font-bold uppercase tracking-[0.14em] text-ink hover:bg-mist hover:text-glacial transition-colors"
+          >
+            <span>Corporate Supply</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-glacial"></i>
+          </a>
+          <a
+            @click="mobileMenuOpen = false"
+            href="#coverage"
+            class="min-h-[48px] flex items-center justify-between px-4 rounded-xl text-base font-display font-bold uppercase tracking-[0.14em] text-ink hover:bg-mist hover:text-glacial transition-colors"
+          >
+            <span>Lahore Delivery</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-glacial"></i>
+          </a>
+        </nav>
+
+        <!-- Drawer Bottom Action Stack -->
+        <div class="space-y-3 border-t border-ink/[0.06] pt-6">
+          <button
+            type="button"
+            @click="mobileMenuOpen = false; openOrderModal()"
+            class="w-full min-h-[50px] py-3.5 px-6 bg-ink hover:bg-glacial text-pure text-xs font-bold uppercase tracking-[0.2em] rounded-full shadow-glacial flex items-center justify-center gap-2 transition-colors"
+          >
+            <i data-lucide="droplets" class="w-4 h-4 text-aqua"></i>
+            <span>Order Water Now</span>
+          </button>
+          <a
+            href="https://wa.me/923204341157?text=Assalam-o-Alaikum%20EVORL%2C%20I%20would%20like%20to%20order%20mineral%20water%20delivery%20in%20Lahore."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full min-h-[50px] py-3.5 px-6 bg-alabaster border border-glacial/25 text-ink text-xs font-bold uppercase tracking-[0.2em] rounded-full flex items-center justify-center gap-2"
+          >
+            <i data-lucide="message-circle" class="w-4 h-4 text-glacial"></i>
+            <span>WhatsApp: 0320-4341157</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============ SECTION 2: EXECUTIVE CRYSTAL WATER-RIPPLE HERO ============ -->
+      <section
+        id="home"
+        class="relative min-h-screen flex items-center pt-36 sm:pt-40 pb-24 overflow-hidden bg-alabaster"
+      >
+        <!-- Full-Bleed Sunlit Water Backdrop + Interactive Ripple Canvas -->
+        <div class="absolute inset-0 z-0 hero-bg origin-center">
+          <!-- LOCAL PLACEHOLDER: images/hero-bg.jpg (16:9 landscape sunlit water backdrop) -->
+          <img
+            src="images/hero-bg.jpg"
+            alt="Sunlit crystal clear mineral water ripples"
+            class="w-full h-full object-cover object-center opacity-55 filter brightness-105 contrast-100"
+          />
+          <!-- Interactive Clear Water Ripples Canvas -->
+          <canvas
+            id="water-canvas"
+            class="absolute inset-0 w-full h-full pointer-events-auto opacity-95"
+            aria-hidden="true"
+          ></canvas>
+          <!-- Lightened Executive Atmospheric White Gradient Wash (25% lighter for crisp water clarity) -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-alabaster/72 via-alabaster/52 to-pure/15 pointer-events-none"
+          ></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-pure/45 via-transparent to-transparent pointer-events-none"
+          ></div>
+          <!-- Seamless Bottom #F8FAFC Fade Mask -->
+          <div
+            class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#F8FAFC] via-[#F8FAFC]/80 to-transparent pointer-events-none"
+          ></div>
+        </div>
+
+        <!-- Hero Foreground Content (Balanced Vertical Spacing & Executive Ocean-Blue Typography) -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full pointer-events-none">
+          <div class="max-w-4xl pointer-events-auto pt-4 sm:pt-6">
+            <!-- 3-Part Executive Blue Headline -->
+            <h1
+              class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-extrabold text-abyss leading-[1.03] tracking-tight mb-7 drop-shadow-[0_2px_18px_rgba(255,255,255,0.85)]"
+            >
+              PURE MINERAL<br />
+              <span
+                class="scramble-text font-editorial italic font-semibold text-glacial tracking-normal inline-block min-w-[280px] sm:min-w-[460px] pr-2"
+                data-text="Engineered Perfection"
+              >
+                Engineered Perfection
+              </span><br />
+              DELIVERED DAILY
+            </h1>
+
+            <!-- Executive Ocean-Blue Subheadline -->
+            <p
+              class="reveal-item text-ocean text-base sm:text-lg md:text-xl max-w-2xl font-medium leading-relaxed mb-10 drop-shadow-[0_1px_12px_rgba(255,255,255,0.9)]"
+            >
+              7-stage purified, mineral-enriched water balanced to <strong class="text-abyss font-bold">pH 7.4</strong> for executive residences, clinics, and corporate workspaces across Johar Town and Lahore.
+            </p>
+
+            <!-- Dual CTAs -->
+            <div class="reveal-item flex flex-wrap items-center gap-4 sm:gap-5">
+              <a
+                href="https://wa.me/923204341157?text=Assalam-o-Alaikum%20EVORL%2C%20I%20would%20like%20to%20place%20an%20order%20for%20mineral%20water%20delivery%20in%20Lahore."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="magnetic-btn inline-flex items-center justify-center gap-3 px-8 py-4 min-h-[52px] bg-glacial hover:bg-abyss text-pure text-xs font-bold uppercase tracking-[0.22em] rounded-full shadow-[0_16px_35px_-8px_rgba(2,132,199,0.45)] transition-all duration-300"
+              >
+                <i data-lucide="message-circle" class="w-4 h-4 text-pure"></i>
+                <span>Order via WhatsApp</span>
+              </a>
+
+              <a
+                href="#catalogue"
+                class="magnetic-btn inline-flex items-center justify-center gap-3 px-8 py-4 min-h-[52px] bg-pure/95 hover:bg-pure border border-glacial/30 hover:border-glacial text-abyss hover:text-glacial text-xs font-bold uppercase tracking-[0.22em] rounded-full backdrop-blur-md shadow-card transition-all duration-300"
+              >
+                <span>Explore Catalogue</span>
+                <i data-lucide="arrow-down-right" class="w-4 h-4 text-glacial"></i>
+              </a>
+            </div>
+
+            <!-- Executive Quick Telemetry Strip -->
+            <div
+              class="reveal-item grid grid-cols-3 gap-4 sm:gap-8 max-w-xl mt-14 pt-8 border-t border-glacial/20"
+            >
+              <div>
+                <span class="font-display font-extrabold text-xl sm:text-2xl text-abyss block">pH 7.4</span>
+                <span class="text-[11px] uppercase tracking-[0.16em] text-ocean font-semibold">Alkaline Balance</span>
+              </div>
+              <div>
+                <span class="font-display font-extrabold text-xl sm:text-2xl text-glacial block">145 PPM</span>
+                <span class="text-[11px] uppercase tracking-[0.16em] text-ocean font-semibold">Optimal TDS</span>
+              </div>
+              <div>
+                <span class="font-display font-extrabold text-xl sm:text-2xl text-abyss block">7-Stage</span>
+                <span class="text-[11px] uppercase tracking-[0.16em] text-ocean font-semibold">UV + RO + Ozone</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 3: BRAND STANDARDS & STORY ============ -->
+      <section
+        id="standards"
+        class="py-24 sm:py-32 bg-alabaster border-t border-ink/[0.06] relative"
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid lg:grid-cols-12 gap-14 lg:gap-16 items-center">
+            <!-- Narrative & Two Numbered Operational Pillars -->
+            <div class="lg:col-span-6 reveal-item">
+              <span class="text-xs font-bold uppercase tracking-[0.28em] text-glacial block mb-4">
+                Hygiene &amp; Filtration Architecture
+              </span>
+              <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-ink leading-[1.1] tracking-tight mb-6">
+                Engineered for clinical purity &amp; <em class="font-editorial italic font-semibold text-glacial">crisp mineral</em> balance.
+              </h2>
+              <p class="text-slate text-base font-normal leading-relaxed mb-10">
+                Founded in Johar Town, Lahore by <strong class="text-ink font-semibold">Muhammad Umar Nazir</strong>, <strong class="text-ink font-semibold">EVORL</strong> eliminates the guesswork from daily drinking water. Every drop passes through automated multi-barrier purification, food-grade sanitization, and batch TDS verification before leaving our facility.
+              </p>
+
+              <!-- Two Numbered Operational Pillars (01 & 02) -->
+              <div class="space-y-6 border-t border-ink/10 pt-8">
+                <div class="flex gap-5 reveal-item">
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-pure border border-glacial/25 shadow-sm flex items-center justify-center shrink-0 text-glacial font-display font-extrabold text-sm"
+                  >
+                    01
+                  </div>
+                  <div>
+                    <h3 class="font-display text-lg font-bold text-ink mb-1.5">
+                      7-Stage RO, UV &amp; Ozone Sterilization
+                    </h3>
+                    <p class="text-sm text-slate leading-relaxed">
+                      Precision micron sediment filtration, activated carbon polishing, reverse osmosis, ultraviolet sterilization, and ozone sanitization ensure 99.99% microbiological safety.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-5 reveal-item">
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-pure border border-glacial/25 shadow-sm flex items-center justify-center shrink-0 text-glacial font-display font-extrabold text-sm"
+                  >
+                    02
+                  </div>
+                  <div>
+                    <h3 class="font-display text-lg font-bold text-ink mb-1.5">
+                      Automated Food-Grade Bottle Hygiene
+                    </h3>
+                    <p class="text-sm text-slate leading-relaxed">
+                      Every 19-liter BPA-free polycarbonate bottle undergoes high-pressure thermal washing, contactless filling, and tamper-evident heat-shrink sealing prior to doorstep dispatch.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dual-Image Grid with GSAP White/Mist Mask Unveil & Strict 4:5 Portrait Aspect Ratios -->
+            <div class="lg:col-span-6 relative grid grid-cols-2 gap-4 sm:gap-6 items-start">
+              <div
+                class="mask-reveal relative overflow-hidden rounded-3xl border border-glacial/20 bg-pure shadow-card aspect-[4/5] mt-8 sm:mt-12"
+              >
+                <!-- LOCAL PLACEHOLDER: images/brand-story-1.jpg (4:5 portrait filtration & quality lab photo) -->
+                <img
+                  src="images/brand-story-1.jpg"
+                  alt="Purified mineral water laboratory quality assurance"
+                  class="w-full h-full object-cover filter brightness-105 contrast-105"
+                />
+                <div class="mask-overlay absolute inset-0 bg-pure origin-bottom"></div>
+              </div>
+
+              <div
+                class="mask-reveal relative overflow-hidden rounded-3xl border border-glacial/20 bg-pure shadow-card aspect-[4/5] mb-8 sm:mb-12"
+              >
+                <!-- LOCAL PLACEHOLDER: images/brand-story-2.jpg (4:5 portrait pure mineral water pouring photo) -->
+                <img
+                  src="images/brand-story-2.jpg"
+                  alt="Crystal clear mineral water pouring into glass"
+                  class="w-full h-full object-cover filter brightness-105 contrast-105"
+                />
+                <div class="mask-overlay absolute inset-0 bg-mist origin-top"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 4: EXECUTIVE PROMOTIONS & PACKAGES ============ -->
+      <section
+        id="packages"
+        class="py-24 sm:py-28 bg-mist border-t border-ink/[0.06] relative"
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal-item">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-[0.28em] text-glacial block mb-3">
+                Tailored Hydration Tiers
+              </span>
+              <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-ink tracking-tight">
+                Executive <em class="font-editorial italic font-semibold text-glacial">Packages &amp; Bundles</em>
+              </h2>
+            </div>
+            <p class="text-slate text-sm sm:text-base max-w-md leading-relaxed">
+              Structured volume plans for Lahore households, corporate suites, clinics, and private hospitality events.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-7">
+            <!-- Package 01: Corporate & Event Bulk Deals -->
+            <div
+              class="reveal-item bg-pure border border-slate-200/80 rounded-3xl p-8 shadow-glacial hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-3 mb-6">
+                  <span class="px-3.5 py-1 rounded-full bg-sky-50 border border-glacial/20 text-[10px] font-bold uppercase tracking-[0.2em] text-glacial">
+                    Corporate &amp; Events
+                  </span>
+                  <div class="w-10 h-10 rounded-2xl bg-alabaster border border-slate-200 flex items-center justify-center text-glacial">
+                    <i data-lucide="building-2" class="w-5 h-5"></i>
+                  </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ink mb-3">
+                  Corporate &amp; Event Bulk Deals
+                </h3>
+                <p class="text-sm text-slate leading-relaxed mb-6">
+                  Scheduled pallet and case deliveries of 500ml, 1.5L, and 19L bottles with priority route allocation for offices, seminars, and weddings across Lahore.
+                </p>
+                <ul class="space-y-3 text-xs text-ink/85 font-medium border-t border-slate-100 pt-5 mb-8">
+                  <li class="flex items-center gap-2.5">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-glacial shrink-0"></i>
+                    <span>Volume-tiered corporate invoicing &amp; weekly billing</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-glacial shrink-0"></i>
+                    <span>Guaranteed morning dispatch before 10:00 AM</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-glacial shrink-0"></i>
+                    <span>Dedicated account coordinator for instant restocks</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                type="button"
+                @click="openOrderModal('500ml Mineral Water (Pack of 12)', 'Weekly')"
+                class="w-full min-h-[48px] py-3.5 px-6 bg-alabaster hover:bg-glacial text-ink hover:text-pure border border-glacial/25 text-xs font-bold uppercase tracking-[0.2em] rounded-full transition-colors duration-300 flex items-center justify-center gap-2"
+              >
+                <span>Request Bulk Quote</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Package 02: New Home Starter Bundle (Featured Highlight) -->
+            <div
+              class="reveal-item bg-pure border-2 border-glacial/40 rounded-3xl p-8 shadow-[0_24px_60px_-12px_rgba(2,132,199,0.22)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-3 mb-6">
+                  <span class="px-3.5 py-1 rounded-full bg-glacial text-pure text-[10px] font-bold uppercase tracking-[0.2em]">
+                    Most Popular &bull; Home Setup
+                  </span>
+                  <div class="w-10 h-10 rounded-2xl bg-sky-50 border border-glacial/25 flex items-center justify-center text-glacial">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                  </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ink mb-3">
+                  New Home Starter Bundle
+                </h3>
+                <p class="text-sm text-slate leading-relaxed mb-6">
+                  Complete turnkey residential setup featuring sealed 19-Litre mineral water bottles paired with your choice of heavy-duty metal stand or smart dispenser pump.
+                </p>
+                <ul class="space-y-3 text-xs text-ink/85 font-medium border-t border-slate-100 pt-5 mb-8">
+                  <li class="flex items-center gap-2.5">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-glacial shrink-0"></i>
+                    <span>2x 19-Litre 7-Stage Purified Mineral Bottles</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-glacial shrink-0"></i>
+                    <span>1x Heavy-Duty Metal Stand or Smart Electric Pump</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-glacial shrink-0"></i>
+                    <span>Zero-fee doorstep installation in Johar Town &amp; Lahore</span>
+                  </li>
+                </ul>
+              </div>
+              <button
+                type="button"
+                @click="openOrderModal('19-Litre Bulk Mineral Water Refill', 'Weekly')"
+                class="w-full min-h-[48px] py-3.5 px-6 bg-glacial hover:bg-ink text-pure text-xs font-bold uppercase tracking-[0.2em] rounded-full shadow-glacial transition-colors duration-300 flex items-center justify-center gap-2"
+              >
+                <span>Claim Starter Bundle</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Package 03: Complimentary Hydration Consultation -->
+            <div
+              class="reveal-item bg-pure border border-slate-200/80 rounded-3xl p-8 shadow-glacial hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-3 mb-6">
+                  <span class="px-3.5 py-1 rounded-full bg-sky-50 border border-glacial/20 text-[10px] font-bold uppercase tracking-[0.2em] text-glacial">
+                    Advisory Service
+                  </span>
+                  <div class="w-10 h-10 rounded-2xl bg-alabaster border border-slate-200 flex items-center justify-center text-glacial">
+                    <i data-lucide="flask-conical" class="w-5 h-5"></i>
+                  </div>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-ink mb-3">
+                  Complimentary Hydration Consultation
+                </h3>
+                <p class="text-sm text-slate leading-relaxed mb-6">
+                  Unsure of your household or office weekly consumption? Book a free capacity assessment and on-site tap water TDS check anywhere in Lahore.
+                </p>
+                <ul class="space-y-3 text-xs text-ink/85 font-medium border-t border-slate-100 pt-5 mb-8">
+                  <li class="flex items-center gap-2.5">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-glacial shrink-0"></i>
+                    <span>Complimentary digital TDS test of your current water</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-glacial shrink-0"></i>
+                    <span>Custom weekly or bi-weekly bottle rotation schedule</span>
+                  </li>
+                  <li class="flex items-center gap-2.5">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-glacial shrink-0"></i>
+                    <span>Direct consultation with owner Muhammad Umar Nazir</span>
+                  </li>
+                </ul>
+              </div>
+              <a
+                href="https://wa.me/923204341157?text=Assalam-o-Alaikum%20Umar%20sb%2C%20I%20would%20like%20to%20book%20a%20Complimentary%20Hydration%20Consultation%20%26%20TDS%20check%20in%20Lahore."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full min-h-[48px] py-3.5 px-6 bg-alabaster hover:bg-glacial text-ink hover:text-pure border border-glacial/25 text-xs font-bold uppercase tracking-[0.2em] rounded-full transition-colors duration-300 flex items-center justify-center gap-2"
+              >
+                <span>Book Free Assessment</span>
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 5: FILTERABLE PRODUCT SHOWCASE ============ -->
+      <section
+        id="catalogue"
+        class="py-24 sm:py-32 bg-alabaster border-t border-ink/[0.06] relative"
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <!-- Header & Alpine Filter Tabs -->
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 reveal-item">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-[0.28em] text-glacial block mb-3">
+                Visual Product Gallery
+              </span>
+              <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-ink tracking-tight">
+                Curated <em class="font-editorial italic font-semibold text-glacial">Hydration</em> Catalogue
+              </h2>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap gap-2.5" role="tablist" aria-label="Product categories">
+              <template
+                x-for="tab in [
+                  { id: 'all', label: 'All' },
+                  { id: 'bulk', label: 'Bulk Bottles' },
+                  { id: 'retail', label: 'Retail Packs' },
+                  { id: 'hardware', label: 'Dispensers & Stands' }
+                ]"
+                :key="tab.id"
+              >
+                <button
+                  type="button"
+                  @click="activeCategory = tab.id"
+                  :class="activeCategory === tab.id
+                    ? 'bg-glacial text-pure border-glacial shadow-[0_8px_20px_-4px_rgba(2,132,199,0.4)]'
+                    : 'bg-pure text-slate border-slate-200 hover:border-glacial/50 hover:text-ink'"
+                  class="min-h-[44px] px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-[0.16em] border transition-all duration-300"
+                  x-text="tab.label"
+                ></button>
+              </template>
+            </div>
+          </div>
+
+          <!-- 3:4 Aspect Ratio Product Cards Grid (Uses images/product-*.jpg via script.js) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+            <template x-for="(product, idx) in showcaseProducts" :key="idx">
+              <div
+                x-show="activeCategory === 'all' || activeCategory === product.category"
+                x-transition:enter="transition ease-out duration-400"
+                x-transition:enter-start="opacity-0 scale-95 translate-y-4"
+                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                @click="openLightbox(product)"
+                class="spotlight-card group relative rounded-3xl overflow-hidden border border-slate-200/90 bg-pure shadow-card hover:shadow-glacial aspect-[3/4] cursor-pointer transition-all duration-500"
+              >
+                <!-- LOCAL PLACEHOLDER: images/product-*.jpg (3:4 portrait product card image) -->
+                <img
+                  :src="product.img"
+                  :alt="product.title"
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                />
+                <!-- Bright Executive Framing & Bottom Legibility Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
+
+                <!-- Top Spec Badge & Zoom Trigger -->
+                <div class="absolute top-5 inset-x-5 flex items-center justify-between gap-2 z-10">
+                  <span
+                    class="px-3.5 py-1.5 rounded-full bg-pure/95 backdrop-blur-md border border-glacial/25 text-[10px] font-bold uppercase tracking-[0.18em] text-ink shadow-sm"
+                    x-text="product.badge"
+                  ></span>
+                  <span
+                    class="w-10 h-10 rounded-full bg-pure/95 backdrop-blur-md border border-glacial/25 text-glacial flex items-center justify-center shadow-sm group-hover:bg-glacial group-hover:text-pure transition-colors"
+                    aria-label="Inspect Product"
+                  >
+                    <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                  </span>
+                </div>
+
+                <!-- Bottom Product Metadata -->
+                <div class="absolute bottom-0 inset-x-0 p-6 sm:p-7 z-10 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
+                  <span
+                    class="text-[10px] uppercase tracking-[0.22em] text-aqua font-bold block mb-1.5"
+                    x-text="product.categoryLabel"
+                  ></span>
+                  <h3 class="font-display text-xl font-bold text-pure mb-1.5" x-text="product.title"></h3>
+                  <p class="text-xs text-slate-200 leading-relaxed line-clamp-2" x-text="product.subtitle"></p>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 6: SERVICES SPOTLIGHT GRID (6 3D CARDS) ============ -->
+      <section
+        id="commercial"
+        class="py-24 sm:py-32 bg-mist border-t border-ink/[0.06] relative"
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="max-w-2xl mb-14 reveal-item">
+            <span class="text-xs font-bold uppercase tracking-[0.28em] text-glacial block mb-3">
+              Complete Product Lineup
+            </span>
+            <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-ink tracking-tight mb-4">
+              Residential &amp; Commercial <em class="font-editorial italic font-semibold text-glacial">Supply</em>
+            </h2>
+            <p class="text-slate text-sm sm:text-base leading-relaxed">
+              Select any bottle size, refill plan, or dispenser hardware below to pre-load your instant WhatsApp order sheet.
+            </p>
+          </div>
+
+          <!-- 6 Pure-White 3D Tilt Spotlight Cards -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+            <!-- 01: 500ml Mineral Water (Pack of 12) -->
+            <div
+              data-tilt
+              data-tilt-max="5"
+              data-tilt-speed="400"
+              data-tilt-glare
+              data-tilt-max-glare="0.12"
+              class="spotlight-card reveal-item bg-pure border border-slate-200/80 shadow-sm hover:shadow-glacial rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between min-h-[240px]"
+            >
+              <div class="relative z-10">
+                <div class="flex items-center justify-between mb-5">
+                  <span class="px-3 py-1 rounded-full bg-sky-50 border border-glacial/20 font-display font-extrabold text-xs text-glacial tracking-widest">
+                    01
+                  </span>
+                  <span class="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate">
+                    Retail &amp; Events
+                  </span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-ink mb-2.5">
+                  500ml Mineral Water (Pack of 12)
+                </h3>
+                <p class="text-slate text-sm leading-relaxed">
+                  Shrink-wrapped case of twelve crystal-clear 500ml PET bottles ideal for boardrooms, clinics, schools, and guest hospitality.
+                </p>
+              </div>
+              <button
+                type="button"
+                @click="openOrderModal('500ml Mineral Water (Pack of 12)')"
+                class="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-glacial hover:text-ink transition-colors mt-6 pt-4 border-t border-slate-100 min-h-[44px]"
+              >
+                <span>Order Pack of 12</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- 02: 1.5-Litre Mineral Water (Pack of 6) -->
+            <div
+              data-tilt
+              data-tilt-max="5"
+              data-tilt-speed="400"
+              data-tilt-glare
+              data-tilt-max-glare="0.12"
+              class="spotlight-card reveal-item bg-pure border border-slate-200/80 shadow-sm hover:shadow-glacial rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between min-h-[240px]"
+            >
+              <div class="relative z-10">
+                <div class="flex items-center justify-between mb-5">
+                  <span class="px-3 py-1 rounded-full bg-sky-50 border border-glacial/20 font-display font-extrabold text-xs text-glacial tracking-widest">
+                    02
+                  </span>
+                  <span class="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate">
+                    Family &amp; Dining
+                  </span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-ink mb-2.5">
+                  1.5-Litre Mineral Water (Pack of 6)
+                </h3>
+                <p class="text-slate text-sm leading-relaxed">
+                  Six 1.5-litre table bottles balanced to pH 7.4 for family dining, executive lunches, travel, and refrigerated storage.
+                </p>
+              </div>
+              <button
+                type="button"
+                @click="openOrderModal('1.5-Litre Mineral Water (Pack of 6)')"
+                class="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-glacial hover:text-ink transition-colors mt-6 pt-4 border-t border-slate-100 min-h-[44px]"
+              >
+                <span>Order Pack of 6</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- 03: 19-Litre Bulk Mineral Water Refill -->
+            <div
+              data-tilt
+              data-tilt-max="5"
+              data-tilt-speed="400"
+              data-tilt-glare
+              data-tilt-max-glare="0.12"
+              class="spotlight-card reveal-item bg-pure border border-slate-200/80 shadow-sm hover:shadow-glacial rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between min-h-[240px]"
+            >
+              <div class="relative z-10">
+                <div class="flex items-center justify-between mb-5">
+                  <span class="px-3 py-1 rounded-full bg-sky-50 border border-glacial/20 font-display font-extrabold text-xs text-glacial tracking-widest">
+                    03
+                  </span>
+                  <span class="text-[11px] font-semibold uppercase tracking-[0.16em] text-glacial">
+                    Flagship Refill
+                  </span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-ink mb-2.5">
+                  19-Litre Bulk Mineral Water Refill
+                </h3>
+                <p class="text-slate text-sm leading-relaxed">
+                  Sanitized, tamper-sealed 19-litre BPA-free polycarbonate dispenser jar delivered directly to your kitchen or office floor.
+                </p>
+              </div>
+              <button
+                type="button"
+                @click="openOrderModal('19-Litre Bulk Mineral Water Refill')"
+                class="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-glacial hover:text-ink transition-colors mt-6 pt-4 border-t border-slate-100 min-h-[44px]"
+              >
+                <span>Order 19L Refill</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- 04: 20-Litre Heavy-Duty Metal Stand -->
+            <div
+              data-tilt
+              data-tilt-max="5"
+              data-tilt-speed="400"
+              data-tilt-glare
+              data-tilt-max-glare="0.12"
+              class="spotlight-card reveal-item bg-pure border border-slate-200/80 shadow-sm hover:shadow-glacial rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between min-h-[240px]"
+            >
+              <div class="relative z-10">
+                <div class="flex items-center justify-between mb-5">
+                  <span class="px-3 py-1 rounded-full bg-sky-50 border border-glacial/20 font-display font-extrabold text-xs text-glacial tracking-widest">
+                    04
+                  </span>
+                  <span class="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate">
+                    Hardware &amp; Cradle
+                  </span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-ink mb-2.5">
+                  20-Litre Heavy-Duty Metal Stand
+                </h3>
+                <p class="text-slate text-sm leading-relaxed">
+                  Powder-coated anti-rust steel cradle stand with non-drip pouring valve for effortless countertop dispensing without electricity.
+                </p>
+              </div>
+              <button
+                type="button"
+                @click="openOrderModal('20-Litre Heavy-Duty Metal Stand')"
+                class="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-glacial hover:text-ink transition-colors mt-6 pt-4 border-t border-slate-100 min-h-[44px]"
+              >
+                <span>Order Metal Stand</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- 05: 20-Litre Manual Vacuum Water Pump -->
+            <div
+              data-tilt
+              data-tilt-max="5"
+              data-tilt-speed="400"
+              data-tilt-glare
+              data-tilt-max-glare="0.12"
+              class="spotlight-card reveal-item bg-pure border border-slate-200/80 shadow-sm hover:shadow-glacial rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between min-h-[240px]"
+            >
+              <div class="relative z-10">
+                <div class="flex items-center justify-between mb-5">
+                  <span class="px-3 py-1 rounded-full bg-sky-50 border border-glacial/20 font-display font-extrabold text-xs text-glacial tracking-widest">
+                    05
+                  </span>
+                  <span class="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate">
+                    Manual Dispenser
+                  </span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-ink mb-2.5">
+                  20-Litre Manual Vacuum Water Pump
+                </h3>
+                <p class="text-slate text-sm leading-relaxed">
+                  Food-grade, airtight press-action manual pump with dust-cap spout—lightweight, portable, and zero power required.
+                </p>
+              </div>
+              <button
+                type="button"
+                @click="openOrderModal('20-Litre Manual Vacuum Water Pump')"
+                class="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-glacial hover:text-ink transition-colors mt-6 pt-4 border-t border-slate-100 min-h-[44px]"
+              >
+                <span>Order Manual Pump</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- 06: 20-Litre Smart Electric Water Pump -->
+            <div
+              data-tilt
+              data-tilt-max="5"
+              data-tilt-speed="400"
+              data-tilt-glare
+              data-tilt-max-glare="0.12"
+              class="spotlight-card reveal-item bg-pure border border-slate-200/80 shadow-sm hover:shadow-glacial rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between min-h-[240px]"
+            >
+              <div class="relative z-10">
+                <div class="flex items-center justify-between mb-5">
+                  <span class="px-3 py-1 rounded-full bg-sky-50 border border-glacial/20 font-display font-extrabold text-xs text-glacial tracking-widest">
+                    06
+                  </span>
+                  <span class="text-[11px] font-semibold uppercase tracking-[0.16em] text-glacial">
+                    USB Rechargeable
+                  </span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-ink mb-2.5">
+                  20-Litre Smart Electric Water Pump
+                </h3>
+                <p class="text-slate text-sm leading-relaxed">
+                  One-touch USB-C rechargeable automatic dispenser with stainless steel 304 spout and low-noise motor for executive pantries.
+                </p>
+              </div>
+              <button
+                type="button"
+                @click="openOrderModal('20-Litre Smart Electric Water Pump')"
+                class="relative z-10 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-glacial hover:text-ink transition-colors mt-6 pt-4 border-t border-slate-100 min-h-[44px]"
+              >
+                <span>Order Smart Pump</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 7: OWNER PROFILE ============ -->
+      <section
+        id="leadership"
+        class="py-24 sm:py-32 bg-alabaster border-t border-ink/[0.06] relative"
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="bg-pure border border-slate-200/80 rounded-[2rem] p-8 sm:p-12 lg:p-16 shadow-glacial">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              <!-- Executive Portrait Frame (Strict 4:5 Portrait Ratio, Face-Safe Top Alignment) -->
+              <div class="lg:col-span-5 reveal-item">
+                <div class="relative w-full max-w-md mx-auto aspect-[4/5] rounded-3xl overflow-hidden border border-glacial/25 bg-mist shadow-card">
+                  <!-- LOCAL PLACEHOLDER: images/founder-umar.jpg (4:5 portrait photo of Muhammad Umar Nazir) -->
+                  <img
+                    src="images/founder-umar.jpg"
+                    alt="Muhammad Umar Nazir — Founder & Managing Director of EVORL"
+                    class="w-full h-full object-cover object-top"
+                  />
+                  <div class="absolute bottom-4 inset-x-4 bg-pure/95 backdrop-blur-md border border-glacial/20 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+                    <div>
+                      <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-glacial block">
+                        Direct Accountability
+                      </span>
+                      <span class="font-display font-bold text-sm text-ink">
+                        Johar Town, Lahore
+                      </span>
+                    </div>
+                    <span class="w-10 h-10 rounded-full bg-sky-50 text-glacial flex items-center justify-center">
+                      <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Leadership Narrative & Direct Contact Channels -->
+              <div class="lg:col-span-7 reveal-item">
+                <span class="text-xs font-bold uppercase tracking-[0.28em] text-glacial block mb-3">
+                  Founder &amp; Managing Director
+                </span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-ink tracking-tight mb-2">
+                  Muhammad Umar Nazir
+                </h2>
+                <p class="font-editorial italic text-xl sm:text-2xl text-glacial font-semibold mb-6">
+                  Setting a transparent, laboratory-verified benchmark for drinking water in Lahore.
+                </p>
+
+                <p class="text-slate text-base leading-relaxed mb-7">
+                  "Families and businesses in Lahore deserve complete confidence in the water they consume every day. At EVORL, we personally oversee every stage—from multi-barrier RO &amp; UV purification in Revenue Housing Society to punctual, courteous doorstep delivery across the city."
+                </p>
+
+                <!-- Specialty Tags -->
+                <div class="flex flex-wrap gap-2.5 mb-9">
+                  <span class="px-4 py-2 rounded-full bg-alabaster border border-slate-200 text-xs font-semibold text-ink">
+                    7-Stage Quality Assurance
+                  </span>
+                  <span class="px-4 py-2 rounded-full bg-alabaster border border-slate-200 text-xs font-semibold text-ink">
+                    Commercial Fleet Logistics
+                  </span>
+                  <span class="px-4 py-2 rounded-full bg-alabaster border border-slate-200 text-xs font-semibold text-ink">
+                    pH 7.4 Mineral Formulation
+                  </span>
+                  <span class="px-4 py-2 rounded-full bg-alabaster border border-slate-200 text-xs font-semibold text-ink">
+                    Same-Day Lahore Dispatch
+                  </span>
+                </div>
+
+                <!-- Direct Call, Email & Instagram Buttons -->
+                <div class="flex flex-wrap items-center gap-3.5">
+                  <a
+                    href="tel:+923204341157"
+                    class="magnetic-btn inline-flex items-center justify-center gap-2.5 px-6 py-3.5 min-h-[48px] bg-ink hover:bg-glacial text-pure text-xs font-bold uppercase tracking-[0.18em] rounded-full shadow-sm transition-colors duration-300"
+                  >
+                    <i data-lucide="phone" class="w-4 h-4 text-aqua"></i>
+                    <span>0320-4341157</span>
+                  </a>
+
+                  <a
+                    href="mailto:umarnazir859@gmail.com"
+                    class="magnetic-btn inline-flex items-center justify-center gap-2.5 px-6 py-3.5 min-h-[48px] bg-alabaster hover:bg-sky-50 border border-slate-200 hover:border-glacial text-ink text-xs font-bold uppercase tracking-[0.18em] rounded-full transition-colors duration-300"
+                  >
+                    <i data-lucide="mail" class="w-4 h-4 text-glacial"></i>
+                    <span>umarnazir859@gmail.com</span>
+                  </a>
+
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="magnetic-btn inline-flex items-center justify-center gap-2.5 px-6 py-3.5 min-h-[48px] bg-alabaster hover:bg-sky-50 border border-slate-200 hover:border-glacial text-ink text-xs font-bold uppercase tracking-[0.18em] rounded-full transition-colors duration-300"
+                  >
+                    <i data-lucide="instagram" class="w-4 h-4 text-glacial"></i>
+                    <span>@evorl_pk</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION 8: LAHORE LOCATION, HOURS & CLEAN DAYLIGHT MAP ============ -->
+      <section
+        id="coverage"
+        class="py-24 sm:py-32 bg-mist border-t border-ink/[0.06] relative"
+      >
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+            <!-- Info Cards Column -->
+            <div class="lg:col-span-5 reveal-item">
+              <span class="text-xs font-bold uppercase tracking-[0.28em] text-glacial block mb-3">
+                Dispatch Hub &amp; Coverage
+              </span>
+              <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-ink tracking-tight mb-8">
+                Johar Town &amp; <em class="font-editorial italic font-semibold text-glacial">Lahore</em> Delivery
+              </h2>
+
+              <div class="space-y-4 mb-9">
+                <!-- Address Card -->
+                <div class="bg-pure border border-slate-200/80 rounded-2xl p-5 shadow-sm flex items-start gap-4">
+                  <div class="w-11 h-11 rounded-xl bg-sky-50 border border-glacial/20 text-glacial flex items-center justify-center shrink-0">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-glacial block mb-1">
+                      Purification &amp; Dispatch Center
+                    </span>
+                    <strong class="font-display text-sm sm:text-base font-bold text-ink block mb-1">
+                      301A Revenue Housing Society
+                    </strong>
+                    <p class="text-xs sm:text-sm text-slate leading-relaxed">
+                      Johar Town, Near Masjid Ayesha, Lahore, Pakistan
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Delivery Hours Card -->
+                <div class="bg-pure border border-slate-200/80 rounded-2xl p-5 shadow-sm flex items-start gap-4">
+                  <div class="w-11 h-11 rounded-xl bg-sky-50 border border-glacial/20 text-glacial flex items-center justify-center shrink-0">
+                    <i data-lucide="clock" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-glacial block mb-1">
+                      Doorstep Delivery Window
+                    </span>
+                    <strong class="font-display text-sm sm:text-base font-bold text-ink block mb-1">
+                      Daily: 8:00 AM – 11:00 PM
+                    </strong>
+                    <p class="text-xs sm:text-sm text-slate leading-relaxed">
+                      7 days a week across Johar Town, Wapda Town, Model Town, Garden Town, Faisal Town &amp; Canal Road.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Direct Contact Card -->
+                <div class="bg-pure border border-slate-200/80 rounded-2xl p-5 shadow-sm flex items-start gap-4">
+                  <div class="w-11 h-11 rounded-xl bg-sky-50 border border-glacial/20 text-glacial flex items-center justify-center shrink-0">
+                    <i data-lucide="headset" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-glacial block mb-1">
+                      Order &amp; Dispatch Desk
+                    </span>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm font-semibold text-ink">
+                      <a href="tel:+923204341157" class="hover:text-glacial transition-colors">
+                        +92 320 4341157
+                      </a>
+                      <span class="hidden sm:inline text-slate-300">&bull;</span>
+                      <a href="mailto:umarnazir859@gmail.com" class="hover:text-glacial transition-colors text-xs sm:text-sm">
+                        umarnazir859@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Revenue+Housing+Society+Johar+Town+Lahore"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="magnetic-btn inline-flex items-center justify-center gap-3 px-7 py-4 min-h-[48px] bg-pure hover:bg-glacial border border-glacial/30 text-ink hover:text-pure text-xs font-bold uppercase tracking-[0.2em] rounded-full shadow-sm transition-all duration-300"
+              >
+                <span>Open in Google Maps</span>
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Clean Daylight-Styled Google Maps Iframe -->
+            <div class="lg:col-span-7 reveal-item">
+              <div class="rounded-3xl overflow-hidden border border-glacial/25 bg-pure shadow-glacial aspect-video lg:aspect-[16/11] relative">
+                <iframe
+                  title="EVORL Location — Revenue Housing Society, Johar Town, Lahore"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13612.87424739224!2d74.2654126!3d31.4631758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903d61a6b73fb%3A0x8c87e6292582c810!2sRevenue%20Employees%20Cooperative%20Housing%20Society%20Johar%20Town%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2spk!4v1710000000000!5m2!1sen!2spk"
+                  class="w-full h-full border-0 filter saturate-95 contrast-100"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-pure border-t border-ink/[0.08] pt-20 pb-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-slate-200/80">
+          <!-- Brand Column with Official EVORL Logo -->
+          <div class="lg:col-span-2">
+            <a
+              href="#home"
+              aria-label="EVORL Pure Mineral Water Home"
+              class="inline-flex items-center mb-5 min-h-[44px] bg-transparent"
+            >
+              <img
+                src="evorl-logo.png"
+                alt="EVORL Pure Mineral Water Lahore"
+                class="h-12 w-auto object-contain bg-transparent transition-transform duration-300 hover:scale-105"
+              />
+            </a>
+            <p class="text-slate text-sm max-w-md leading-relaxed mb-6">
+              7-stage purified, mineral-balanced alkaline water (pH 7.4) serving residences, clinics, and commercial workspaces across Johar Town and Lahore daily from 8:00 AM to 11:00 PM.
+            </p>
+            <div class="flex items-center gap-3">
+              <a
+                href="https://wa.me/923204341157"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="EVORL WhatsApp"
+                class="w-11 h-11 rounded-full bg-alabaster border border-slate-200 hover:border-glacial text-ink hover:text-glacial flex items-center justify-center transition-colors"
+              >
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="tel:+923204341157"
+                aria-label="Call EVORL"
+                class="w-11 h-11 rounded-full bg-alabaster border border-slate-200 hover:border-glacial text-ink hover:text-glacial flex items-center justify-center transition-colors"
+              >
+                <i data-lucide="phone" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="mailto:umarnazir859@gmail.com"
+                aria-label="Email EVORL"
+                class="w-11 h-11 rounded-full bg-alabaster border border-slate-200 hover:border-glacial text-ink hover:text-glacial flex items-center justify-center transition-colors"
+              >
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="EVORL Instagram"
+                class="w-11 h-11 rounded-full bg-alabaster border border-slate-200 hover:border-glacial text-ink hover:text-glacial flex items-center justify-center transition-colors"
+              >
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Navigation -->
+          <div>
+            <h4 class="text-xs uppercase tracking-[0.24em] text-ink font-display font-bold mb-5">
+              Navigation
+            </h4>
+            <ul class="space-y-2.5 text-sm text-slate">
+              <li><a href="#standards" class="hover:text-glacial transition-colors inline-block py-1">7-Stage Standards</a></li>
+              <li><a href="#packages" class="hover:text-glacial transition-colors inline-block py-1">Executive Packages</a></li>
+              <li><a href="#catalogue" class="hover:text-glacial transition-colors inline-block py-1">Product Catalogue</a></li>
+              <li><a href="#commercial" class="hover:text-glacial transition-colors inline-block py-1">Commercial Supply</a></li>
+              <li><a href="#coverage" class="hover:text-glacial transition-colors inline-block py-1">Lahore Delivery Zones</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Facility -->
+          <div>
+            <h4 class="text-xs uppercase tracking-[0.24em] text-ink font-display font-bold mb-5">
+              Dispatch Center
+            </h4>
+            <ul class="space-y-3 text-sm text-slate">
+              <li class="leading-relaxed">
+                301A Revenue Housing Society, Johar Town, Near Masjid Ayesha, Lahore
+              </li>
+              <li>
+                <a href="tel:+923204341157" class="font-semibold text-ink hover:text-glacial transition-colors">
+                  +92 320 4341157
+                </a>
+              </li>
+              <li>
+                <a href="mailto:umarnazir859@gmail.com" class="hover:text-glacial transition-colors">
+                  umarnazir859@gmail.com
+                </a>
+              </li>
+              <li class="text-xs font-semibold uppercase tracking-[0.14em] text-glacial pt-1">
+                Daily: 8:00 AM – 11:00 PM
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate gap-4">
+          <p>&copy; 2026 EVORL Mineral Water. All rights reserved. Proprietor: Muhammad Umar Nazir.</p>
+          <p>Johar Town &bull; Lahore, Pakistan</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ PRODUCT LIGHTBOX INSPECTION MODAL ============ -->
+    <div
+      x-show="lightboxOpen"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 scale-95"
+      x-transition:enter-end="opacity-100 scale-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100 scale-100"
+      x-transition:leave-end="opacity-0 scale-95"
+      @keydown.escape.window="lightboxOpen = false"
+      class="fixed inset-0 z-[140] flex items-center justify-center p-4 sm:p-8 bg-ink/80 backdrop-blur-xl"
+      style="display: none;"
+    >
+      <div
+        @click.away="lightboxOpen = false"
+        class="bg-pure border border-glacial/25 rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl relative max-h-[90vh] overflow-y-auto"
+      >
+        <button
+          type="button"
+          @click="lightboxOpen = false"
+          aria-label="Close Preview"
+          class="absolute top-4 right-4 z-20 w-11 h-11 rounded-full bg-pure/95 border border-slate-200 text-ink hover:text-glacial flex items-center justify-center shadow-md"
+        >
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <template x-if="lightboxItem">
+          <div>
+            <!-- Strict 3:4 Portrait Product Preview Frame -->
+            <div class="aspect-[3/4] max-h-[58vh] w-full bg-mist overflow-hidden">
+              <!-- LOCAL PLACEHOLDER: images/product-*.jpg (3:4 portrait lightbox preview) -->
+              <img
+                :src="lightboxItem.img"
+                :alt="lightboxItem.title"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <div>
+                <span
+                  class="text-[10px] font-bold uppercase tracking-[0.22em] text-glacial block mb-1"
+                  x-text="lightboxItem.badge"
+                ></span>
+                <h3 class="font-display text-2xl font-bold text-ink mb-1" x-text="lightboxItem.title"></h3>
+                <p class="text-sm text-slate" x-text="lightboxItem.subtitle"></p>
+              </div>
+              <button
+                type="button"
+                @click="const target = lightboxItem.orderName; lightboxOpen = false; openOrderModal(target)"
+                class="shrink-0 min-h-[48px] px-6 py-3.5 bg-glacial hover:bg-ink text-pure text-xs font-bold uppercase tracking-[0.2em] rounded-full shadow-glacial transition-colors"
+              >
+                Order Item
+              </button>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- ============ SECTION 9: INTERACTIVE WHATSAPP ORDER & QUOTE MODAL ============ -->
+    <div
+      x-show="modalOpen"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @keydown.escape.window="modalOpen = false"
+      class="fixed inset-0 z-[150] flex items-center justify-center p-4 sm:p-6 bg-ink/75 backdrop-blur-xl"
+      style="display: none;"
+    >
+      <div
+        @click.away="modalOpen = false"
+        class="bg-pure/95 backdrop-blur-2xl border border-glacial/25 rounded-3xl p-6 sm:p-10 max-w-2xl w-full shadow-[0_25px_80px_-15px_rgba(15,23,42,0.35)] relative max-h-[90vh] overflow-y-auto"
+      >
+        <!-- Close Modal Button (44px+ touch target) -->
+        <button
+          type="button"
+          @click="modalOpen = false"
+          aria-label="Close Order Modal"
+          class="absolute top-5 right-5 w-11 h-11 rounded-full bg-alabaster border border-slate-200 text-ink hover:border-glacial hover:text-glacial flex items-center justify-center transition-colors"
+        >
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <!-- Active Order Form -->
+        <div x-show="!orderSent">
+          <div class="mb-6 pr-12">
+            <span class="text-[11px] font-bold uppercase tracking-[0.24em] text-glacial block mb-1.5">
+              Instant WhatsApp Dispatch &bull; 8 AM – 11 PM
+            </span>
+            <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-ink">
+              Build Your <em class="font-editorial italic font-semibold text-glacial">EVORL</em> Order
+            </h3>
+          </div>
+
+          <form @submit.prevent="submitWhatsAppOrder()" class="space-y-5">
+            <!-- Customer Name & Phone -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="order-name" class="block text-[11px] uppercase tracking-[0.16em] font-bold text-ink mb-1.5">
+                  Full Name *
+                </label>
+                <input
+                  id="order-name"
+                  type="text"
+                  required
+                  x-model="orderForm.name"
+                  placeholder="e.g. Bilal Ahmed"
+                  class="w-full min-h-[46px] bg-alabaster border border-slate-200 focus:border-glacial focus:bg-pure rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-slate/50 focus:outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label for="order-phone" class="block text-[11px] uppercase tracking-[0.16em] font-bold text-ink mb-1.5">
+                  Phone / WhatsApp *
+                </label>
+                <input
+                  id="order-phone"
+                  type="tel"
+                  required
+                  x-model="orderForm.phone"
+                  placeholder="03XX-XXXXXXX"
+                  class="w-full min-h-[46px] bg-alabaster border border-slate-200 focus:border-glacial focus:bg-pure rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-slate/50 focus:outline-none transition-colors"
+                />
+              </div>
+            </div>
+
+            <!-- Lahore Delivery Address -->
+            <div>
+              <label for="order-address" class="block text-[11px] uppercase tracking-[0.16em] font-bold text-ink mb-1.5">
+                Lahore Delivery Address *
+              </label>
+              <input
+                id="order-address"
+                type="text"
+                required
+                x-model="orderForm.address"
+                placeholder="House / Office #, Street, Block, Society (e.g. Block G1, Johar Town)"
+                class="w-full min-h-[46px] bg-alabaster border border-slate-200 focus:border-glacial focus:bg-pure rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-slate/50 focus:outline-none transition-colors"
+              />
+            </div>
+
+            <!-- Item Quantity Steppers for All 6 Products -->
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="text-[11px] uppercase tracking-[0.16em] font-bold text-ink">
+                  Select Products &amp; Quantities
+                </span>
+                <span
+                  class="text-xs font-bold text-glacial"
+                  x-text="totalItemsCount() + (totalItemsCount() === 1 ? ' item selected' : ' items selected')"
+                ></span>
+              </div>
+
+              <div class="space-y-2.5">
+                <template x-for="(item, index) in orderItems" :key="item.name">
+                  <div
+                    :class="item.qty > 0 ? 'bg-sky-50/70 border-glacial/40' : 'bg-alabaster border-slate-200/80'"
+                    class="flex items-center justify-between gap-3 p-3 rounded-2xl border transition-colors"
+                  >
+                    <div class="min-w-0 pr-2">
+                      <span class="font-display font-bold text-xs sm:text-sm text-ink block truncate" x-text="item.name"></span>
+                      <span class="text-[11px] text-slate block" x-text="item.unit"></span>
+                    </div>
+
+                    <!-- Touch-Safe Quantity Stepper -->
+                    <div class="flex items-center gap-2 shrink-0">
+                      <button
+                        type="button"
+                        @click="item.qty = Math.max(0, item.qty - 1)"
+                        aria-label="Decrease quantity"
+                        class="w-11 h-11 rounded-xl bg-pure border border-slate-200 hover:border-glacial text-ink hover:text-glacial font-bold flex items-center justify-center transition-colors"
+                      >
+                        <i data-lucide="minus" class="w-4 h-4"></i>
+                      </button>
+                      <span
+                        class="w-8 text-center font-display font-extrabold text-sm text-ink"
+                        x-text="item.qty"
+                      ></span>
+                      <button
+                        type="button"
+                        @click="item.qty++"
+                        aria-label="Increase quantity"
+                        class="w-11 h-11 rounded-xl bg-pure border border-slate-200 hover:border-glacial text-ink hover:text-glacial font-bold flex items-center justify-center transition-colors"
+                      >
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                      </button>
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
+
+            <!-- Delivery Frequency Selector -->
+            <div>
+              <span class="block text-[11px] uppercase tracking-[0.16em] font-bold text-ink mb-2">
+                Delivery Frequency
+              </span>
+              <div class="grid grid-cols-3 gap-2.5">
+                <template x-for="freq in ['One-Time', 'Weekly', 'Bi-Weekly']" :key="freq">
+                  <button
+                    type="button"
+                    @click="orderForm.frequency = freq"
+                    :class="orderForm.frequency === freq
+                      ? 'bg-glacial text-pure border-glacial shadow-sm'
+                      : 'bg-alabaster text-ink border-slate-200 hover:border-glacial/50'"
+                    class="min-h-[44px] py-2.5 px-3 rounded-xl border text-xs font-bold uppercase tracking-[0.12em] transition-all"
+                    x-text="freq"
+                  ></button>
+                </template>
+              </div>
+            </div>
+
+            <!-- Delivery Notes -->
+            <div>
+              <label for="order-notes" class="block text-[11px] uppercase tracking-[0.16em] font-bold text-ink mb-1.5">
+                Delivery Instructions / Notes (Optional)
+              </label>
+              <textarea
+                id="order-notes"
+                rows="2"
+                x-model="orderForm.notes"
+                placeholder="Preferred time slot, gate code, or empty bottle exchange count..."
+                class="w-full bg-alabaster border border-slate-200 focus:border-glacial focus:bg-pure rounded-xl px-4 py-2.5 text-sm text-ink placeholder:text-slate/50 focus:outline-none transition-colors"
+              ></textarea>
+            </div>
+
+            <!-- Validation Notice -->
+            <p
+              x-show="orderError"
+              x-text="orderError"
+              class="text-xs font-semibold text-rose-600 bg-rose-50 border border-rose-200 rounded-xl px-4 py-2.5"
+              style="display: none;"
+            ></p>
+
+            <!-- Dynamic WhatsApp Submit Button -->
+            <button
+              type="submit"
+              class="w-full min-h-[52px] py-4 px-6 bg-glacial hover:bg-ink text-pure text-xs font-bold uppercase tracking-[0.2em] rounded-full shadow-glacial transition-colors duration-300 flex items-center justify-center gap-2.5"
+            >
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Send Order &amp; Get Price on WhatsApp</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Confirmation State After Launching WhatsApp -->
+        <div x-show="orderSent" class="text-center py-8" style="display: none;">
+          <div class="w-16 h-16 rounded-full bg-sky-50 border-2 border-glacial text-glacial flex items-center justify-center mx-auto mb-5 shadow-sm">
+            <i data-lucide="check" class="w-8 h-8"></i>
+          </div>
+          <span class="text-[11px] font-bold uppercase tracking-[0.24em] text-glacial block mb-2">
+            WhatsApp Dispatch Ready
+          </span>
+          <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-ink mb-3">
+            Order Summary Prepared!
+          </h3>
+          <p class="text-slate text-sm max-w-md mx-auto leading-relaxed mb-7">
+            Your itemized EVORL order has been formatted for WhatsApp dispatch (<strong class="text-ink">0320-4341157</strong>). If WhatsApp did not open automatically, use the direct link below.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              :href="whatsappUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto min-h-[48px] px-7 py-3.5 bg-glacial hover:bg-ink text-pure text-xs font-bold uppercase tracking-[0.2em] rounded-full shadow-glacial transition-colors inline-flex items-center justify-center gap-2"
+            >
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>Open WhatsApp Chat</span>
+            </a>
+            <button
+              type="button"
+              @click="orderSent = false"
+              class="w-full sm:w-auto min-h-[48px] px-6 py-3.5 bg-alabaster border border-slate-200 text-ink hover:border-glacial text-xs font-bold uppercase tracking-[0.2em] rounded-full transition-colors"
+            >
+              Edit Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
